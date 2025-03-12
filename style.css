@@ -2875,6 +2875,9 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.mobile-menu-opened {
+  display: none;
+}
 .timer-border {
   background: rgb(255, 255, 255);
   background: linear-gradient(
