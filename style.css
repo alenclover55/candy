@@ -505,6 +505,11 @@ body {
     text-decoration: none;
   }
 }
+.group-nav {
+  .arrow-btn {
+    display: flex;
+  }
+}
 .footer-bottom-right {
   display: flex;
   align-items: center;
