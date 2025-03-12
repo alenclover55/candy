@@ -7,9 +7,13 @@
 body {
   background: #101118;
 }
+
 .container {
   max-width: 1391px;
   margin: 0 auto;
+}
+.mobile-menu {
+  display: none;
 }
 .header-wrapper {
   display: flex;
@@ -1722,44 +1726,7 @@ body {
   transform: rotate(90deg);
   transition: transform 0.3s;
 }
-.mobile-menu {
-  display: flex;
-  align-items: end;
-  gap: 21px;
-  justify-content: space-between;
-  width: 100%;
-  background: rgb(13, 14, 22);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
-  padding: 3px 24px 12px 24px;
-  span {
-    border-radius: 50%;
-    height: 44px;
-    width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(180deg, #6a9eff, #4f68e3 100%);
-  }
-  a {
-    img {
-      width: 20px;
-    }
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 4px;
-  }
-  p {
-    color: #33353e;
-    font-family: Google Sans;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 131%;
-  }
-}
+
 .provider-option {
   color: #4d4f59;
   font-family: Google Sans;
@@ -3036,6 +3003,101 @@ body {
     gap: 8px;
     width: 100%;
   }
+  .mobile-menu {
+    display: flex;
+    align-items: end;
+    gap: 21px;
+    justify-content: space-between;
+    width: 100%;
+    background: rgb(13, 14, 22);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    padding: 3px 24px 12px 24px;
+    span {
+      border-radius: 50%;
+      height: 44px;
+      width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #6a9eff, #4f68e3 100%);
+    }
+    a {
+      img {
+        width: 20px;
+      }
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 4px;
+    }
+    p {
+      color: #33353e;
+      font-family: Google Sans;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 131%;
+    }
+  }
+  .mobile-menu-opened {
+    display: none;
+    position: fixed;
+    bottom: 78.72px;
+    border-radius: 24px 24px 0px 0px;
+    padding: 28px 28px 20px 28px;
+    width: 100%;
+    background: #0d0e16;
+    z-index: 10;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+
+    &.open {
+      display: block;
+      transform: translateY(0);
+    }
+    .group-header {
+      margin-top: 0;
+    }
+    .group-icon {
+      background: linear-gradient(180deg, #fe6753, #da3a28 100%);
+    }
+    .link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      a {
+        color: #4d4f59;
+        font-family: Google Sans;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 15px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 10px;
+        background: #191b26;
+        opacity: 0.8;
+        svg {
+          color: #f9fbff;
+          width: 20px;
+          height: 20px;
+        }
+
+        &.active {
+          color: #f9fbff;
+          font-family: Google Sans;
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 15px;
+        }
+      }
+    }
+  }
 }
 @media (max-width: 1020px) {
   .slots-grid {
@@ -3786,63 +3848,7 @@ body {
       }
     }
   }
-  .mobile-menu-opened {
-    display: none;
-    position: fixed;
-    bottom: 78.72px;
-    border-radius: 24px 24px 0px 0px;
-    padding: 28px 28px 20px 28px;
-    width: 100%;
-    background: #0d0e16;
-    z-index: 10;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
 
-    &.open {
-      display: block;
-      transform: translateY(0);
-    }
-    .group-header {
-      margin-top: 0;
-    }
-    .group-icon {
-      background: linear-gradient(180deg, #fe6753, #da3a28 100%);
-    }
-    .link-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      a {
-        color: #4d4f59;
-        font-family: Google Sans;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 15px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        width: 100%;
-        padding: 12px 16px;
-        border-radius: 10px;
-        background: #191b26;
-        opacity: 0.8;
-        svg {
-          color: #f9fbff;
-          width: 20px;
-          height: 20px;
-        }
-
-        &.active {
-          color: #f9fbff;
-          font-family: Google Sans;
-          font-size: 12px;
-          font-weight: 700;
-          line-height: 15px;
-        }
-      }
-    }
-  }
   .exp-info {
     font-size: 12px;
   }
@@ -3946,6 +3952,7 @@ body {
       }
     }
   }
+
   .referal-page {
     .group-icon {
       background: linear-gradient(180deg, #6a9eff, #4f68e3 100%);
