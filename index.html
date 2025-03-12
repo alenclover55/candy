@@ -18,7 +18,7 @@
       <div class="container">
         <div class="header-wrapper">
           <div class="header-left">
-            <a class="logo" href="">
+            <a class="logo" href="/">
               <img src="./assets/images/logo.svg" alt="" />
             </a>
             <div class="nav">
@@ -137,7 +137,7 @@
       </div>
     </header>
     <div class="sidebar">
-      <a href="" class="sidebar-logo"
+      <a href="/" class="sidebar-logo"
         ><img src="./assets/images/candy.png" alt=""
       /></a>
       <div class="sidebar-nav">
@@ -166,9 +166,9 @@
       <div class="group-header">
         <div class="group-title">
           <span class="group-icon">
-            <img src="./assets/icons/dice.svg" alt=""
+            <img src="./assets/icons/menu-icon.svg" alt=""
           /></span>
-          <h3>Dice</h3>
+          <h3>Меню</h3>
         </div>
         <span class="menu-close-btn">
           <img src="./assets/icons/close.svg" alt="" />
@@ -425,13 +425,28 @@
               class="swiper-slide main-slide"
               style="background: url('./assets/images/mainbg2.jpeg') no-repeat"
             >
-              Slide 2
+              <h3>
+                Турниры с призовым пулом <br />
+                до 100 000 ₽
+              </h3>
+              <p>Учавствуй и занимай первые места!</p>
+              <a href=""
+                ><img
+                  src="./assets/icons/tournament-icon.svg"
+                  alt=""
+                />Учавствовать</a
+              >
             </div>
             <div
               class="swiper-slide main-slide"
               style="background: url('./assets/images/mainbg3.jpeg') no-repeat"
             >
-              Slide 3
+              <h3>
+                Продвигайся по рангам и получай <br />
+                больше бонусов!
+              </h3>
+              <p>Чем выше твой ранг — тем щедрее награды</p>
+              <a href=""><img src="./assets/icons/gift.svg" alt="" />Перейти</a>
             </div>
           </div>
           <div class="swiper-pagination"></div>
@@ -1138,8 +1153,43 @@
         </div>
         <div class="deposite-block">
           <div class="wallet-wariant-title">
-            <h3>Вывод средств</h3>
+            <h3>Пополнение баланса</h3>
             <span class="menu-close-btn">
+              <img src="./assets/icons/close.svg" alt="" />
+            </span>
+          </div>
+          <div class="deposite-body">
+            <div class="game-input-wrapper">
+              <p>Сумма пополнения</p>
+              <div class="game-input">
+                <input type="text" value="1" placeholder="300 ₽ - 100 000 ₽" />
+              </div>
+              <div>
+                <div class="game-input-btns">
+                  <button>100</button>
+                  <button>200</button>
+                  <button>1000</button>
+                  <button>5000</button>
+                </div>
+              </div>
+            </div>
+            <div class="game-input-wrapper">
+              <p>Промокод (если есть)</p>
+              <div class="game-input">
+                <input type="text" placeholder="Введите промокод" />
+              </div>
+            </div>
+            <button class="wallet-confirm">Перейти к оплате</button>
+          </div>
+          <div class="wallet-result">
+            <p>Комиссия: <span>0.00₽</span></p>
+            <p>Сумма к получению: <span>0.00₽</span></p>
+          </div>
+        </div>
+        <div class="withdraw-block">
+          <div class="wallet-wariant-title">
+            <h3>Снять средства</h3>
+            <span class="modal-close-btn">
               <img src="./assets/icons/close.svg" alt="" />
             </span>
           </div>
@@ -1147,7 +1197,7 @@
             <div class="game-input-wrapper">
               <p>Номер кошелька/Телефона</p>
               <div class="game-input">
-                <input type="text" placeholder="300 ₽ - 100 000 ₽" />
+                <input placeholder="Номер" type="text" />
               </div>
               <div>
                 <div class="game-input-btns">
@@ -1161,7 +1211,7 @@
             <div class="game-input-wrapper">
               <p>Сумма вывода</p>
               <div class="game-input">
-                <input type="text" value="1.00" />
+                <input value="1.00" type="text" />
               </div>
             </div>
             <button class="wallet-confirm">Оформить заявку</button>
@@ -1172,7 +1222,7 @@
           </div>
         </div>
       </div>
-      <div class="popup deposite-modal">
+      <!-- <div class="popup deposite-modal">
         <div class="wallet-menu">
           <div class="group-header">
             <div class="group-title">
@@ -1471,7 +1521,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./script.js"></script>

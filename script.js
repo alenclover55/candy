@@ -108,16 +108,17 @@ $(".modal-close-btn").click(() => {
 });
 
 $(".wallet-btn").click(() => {
-  showPopup(".deposite-modal");
-});
-$(".withdraw-btn").click(() => {
-  $(".popup").hide();
   showPopup(".withdraw-modal");
 });
-$(".deposite-btn").click(() => {
-  $(".popup").hide();
-  showPopup(".deposite-modal");
-});
+// $(".withdraw-btn").click(() => {
+//   $(".popup").hide();
+//   showPopup(".withdraw-modal");
+// });
+// $(".deposite-btn").click(() => {
+//   $(".popup").hide();
+//   showPopup(".deposite-modal");
+// });
+
 $(".wallet-history-btn").click(() => {
   $(".popup").hide();
   showPopup(".wallet-history-modal");
@@ -199,5 +200,25 @@ $(document).ready(function () {
     ) {
       $(".mobile-menu-opened").removeClass("open"); // Скрываем меню
     }
+  });
+});
+$(document).ready(function () {
+  // Скрываем все блоки, кроме deposite-block
+  $(".withdraw-block").hide(); // Скрываем блок вывода
+
+  // Обработчик клика для кнопки "Пополнение"
+  $(".deposite-btn").click(function () {
+    $(".withdraw-block").hide(); // Скрываем блок вывода
+    $(".deposite-block").fadeIn(); // Показываем блок пополнения
+    $(".deposite-btn").addClass("active"); // Добавляем активный класс к кнопке пополнения
+    $(".withdraw-btn").removeClass("active"); // Убираем активный класс от кнопки вывода
+  });
+
+  // Обработчик клика для кнопки "Вывод"
+  $(".withdraw-btn").click(function () {
+    $(".deposite-block").hide(); // Скрываем блок пополнения
+    $(".withdraw-block").fadeIn(); // Показываем блок вывода
+    $(".withdraw-btn").addClass("active"); // Добавляем активный класс к кнопке вывода
+    $(".deposite-btn").removeClass("active"); // Убираем активный класс от кнопки пополнения
   });
 });

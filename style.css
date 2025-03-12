@@ -515,6 +515,14 @@ body {
   align-items: center;
   gap: 24px;
 }
+.swiper-pagination-bullet {
+  background: #ffffff8a !important;
+}
+.swiper-pagination-bullet-active {
+  background: #f9fbff !important;
+  width: 34px !important;
+  border-radius: 9px !important;
+}
 .sidebar {
   position: fixed;
   left: 0;
@@ -1945,7 +1953,8 @@ body {
     }
   }
 }
-.deposite-block {
+.deposite-block,
+.withdraw-block {
   padding: 36px 40px 36px 40px;
   width: 50%;
   display: flex;
@@ -3437,7 +3446,8 @@ body {
     width: 100%;
     background: transparent;
   }
-  .deposite-block {
+  .deposite-block,
+  .withdraw-block {
     padding: 0 14px 24px 14px;
     width: 100%;
   }
