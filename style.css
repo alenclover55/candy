@@ -3,7 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html,
+body {
+  touch-action: manipulation;
+}
 body {
   background: #101118;
 }
@@ -325,6 +328,11 @@ body {
   padding-left: 34px;
   padding-top: 31px;
   border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-15px);
+  }
   .mines-game-img {
     position: absolute;
     right: 6px;
@@ -721,7 +729,7 @@ body {
         justify-content: center;
         gap: 4px;
         height: 52px;
-        width: 112px;
+        width: 118px;
         border-radius: 12px;
         border-radius: 20px;
         background: linear-gradient(180deg, #6a9eff, #4f68e3 100%);
@@ -808,7 +816,7 @@ body {
           justify-content: center;
           gap: 4px;
           height: 52px;
-          width: 112px;
+          width: 118px;
           border-radius: 12px;
           border-radius: 20px;
           background: linear-gradient(180deg, #6a9eff, #4f68e3 100%);
@@ -4536,6 +4544,9 @@ body {
       font-size: 12px;
       padding-left: 47px;
     }
+  }
+  .swiper-pagination {
+    display: none !important;
   }
   .timer-count {
     gap: 3px;
