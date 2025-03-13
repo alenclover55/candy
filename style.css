@@ -1812,6 +1812,7 @@ body {
     outline: none;
     border: none;
     position: relative;
+    cursor: pointer;
     padding-bottom: 14px;
     &.active {
       color: #ffffff;
@@ -1885,7 +1886,6 @@ body {
   }
 }
 .withdraw-history {
-  display: block;
   .table-header {
     padding: 16px 53px 18px 24px;
     border-radius: 13px;
