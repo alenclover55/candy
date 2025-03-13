@@ -4494,32 +4494,18 @@ body {
   .game-filter-btns {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
     button {
-      color: #4d4f59;
-      font-family: Google Sans;
       font-size: 12px;
-      font-weight: 500;
       border-radius: 14px;
-      border: none;
       background: #151721;
-      padding: 12px 21px 12px 19px;
-      text-wrap: nowrap;
-      cursor: pointer;
+      padding: 8px 21px 8px 19px;
       display: flex;
       align-items: center;
       gap: 4px;
       svg {
         width: 20px;
         height: 20px;
-      }
-      &:hover {
-        background: linear-gradient(180deg, #6a9eff52, #4f68e352 100%);
-        color: #fff;
-      }
-      &.active {
-        color: #fff;
-        background: linear-gradient(180deg, #6a9eff, #4f68e3 100%);
       }
     }
   }
@@ -4532,6 +4518,23 @@ body {
       font-size: 22.09px;
       margin: 0 9px;
       margin-bottom: 38px;
+    }
+  }
+  .search {
+    position: relative;
+    width: 100%;
+    img {
+      position: absolute;
+      width: 20px;
+      top: 50%;
+      left: 22px;
+      transform: translateY(-50%);
+    }
+    input {
+      height: 36px;
+      border-radius: 10px;
+      font-size: 12px;
+      padding-left: 47px;
     }
   }
   .timer-count {
