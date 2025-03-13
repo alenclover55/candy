@@ -108,88 +108,63 @@ $(".modal-close-btn").click(() => {
 });
 
 $(".wallet-btn").click(() => {
-  showPopup(".withdraw-modal");
-});
-// $(".withdraw-btn").click(() => {
-//   $(".popup").hide();
-//   showPopup(".withdraw-modal");
-// });
-// $(".deposite-btn").click(() => {
-//   $(".popup").hide();
-//   showPopup(".deposite-modal");
-// });
-
-$(".wallet-history-btn").click(() => {
-  $(".popup").hide();
-  showPopup(".wallet-history-modal");
+  showPopup(".wallet-modal");
 });
 
 $(document).ready(function () {
-  // Обработчик клика для кнопки "Пополнения"
   $("#deposits-btn").click(function () {
-    $(".withdraw-history").hide(); // Скрыть таблицу выводов
-    $(".deposite-history").fadeIn(); // Показать таблицу пополнений
-    $(this).addClass("active"); // Добавить класс активной кнопке
-    $("#withdrawals-btn").removeClass("active"); // Удалить класс у другой кнопки
+    $(".withdraw-history").hide();
+    $(".deposite-history").fadeIn();
+    $(this).addClass("active");
+    $("#withdrawals-btn").removeClass("active");
   });
 
-  // Обработчик клика для кнопки "Выводы"
   $("#withdrawals-btn").click(function () {
-    $(".deposite-history").hide(); // Скрыть таблицу пополнений
-    $(".withdraw-history").fadeIn(); // Показать таблицу выводов
-    $(this).addClass("active"); // Добавить класс активной кнопке
-    $("#deposits-btn").removeClass("active"); // Удалить класс у другой кнопки
+    $(".deposite-history").hide();
+    $(".withdraw-history").fadeIn();
+    $(this).addClass("active");
+    $("#deposits-btn").removeClass("active");
   });
 });
 
 $(document).ready(function () {
-  // Показываем/скрываем выпадающий список при клике на заголовок
   $(".provider-select-header").click(function () {
-    $(".provider-select-body").slideToggle(); // Плавно показываем/скрываем тело
+    $(".provider-select-body").slideToggle();
   });
 
-  // Обработчик клика для опций
   $(".provider-option").click(function () {
-    const selectedValue = $(this).data("value"); // Получаем значение выбранного провайдера
-    $(".select-value").text($(this).text()); // Обновляем текст заголовка
-    $(".provider-select-body").slideUp(); // Скрываем выпадающий список // Можно использовать для дальнейшей логики
+    const selectedValue = $(this).data("value");
+    $(".select-value").text($(this).text());
+    $(".provider-select-body").slideUp();
   });
 
-  // Закрытие списка при клике вне его
   $(document).click(function (event) {
     if (!$(event.target).closest(".providers-select-wrapper").length) {
-      $(".provider-select-body").slideUp(); // Скройте список, если кликнули вне
+      $(".provider-select-body").slideUp();
     }
   });
 });
 
 $(document).ready(function () {
-  // Скрываем тело FAQ по умолчанию
   $(".faq-item-body").hide();
 
-  // Обработчик клика для заголовка FAQ
   $(".faq-item-header").click(function () {
-    // Находим тело соответствующего элемента FAQ
     const body = $(this).next(".faq-item-body");
 
-    // Переключаем видимость тела FAQ
-    body.slideToggle(300); // Плавное открытие/закрытие
+    body.slideToggle(300);
 
-    // Можно добавить класс для изменения иконки, если нужно
-    $(this).find("svg").toggleClass("active"); // Пример изменения класса
+    $(this).find("svg").toggleClass("active");
   });
 });
 $(document).ready(function () {
-  // Открытие меню по клику на кнопку меню
   $(".menu-btn").click(function (e) {
-    e.preventDefault(); // Предотвращаем переход по ссылке
+    e.preventDefault();
     console.log("Menu button clicked");
-    $(".mobile-menu-opened").toggleClass("open"); // Переключаем класс 'open'
+    $(".mobile-menu-opened").toggleClass("open");
   });
 
-  // Закрытие меню по клику на кнопку закрытия
   $(".menu-close-btn").click(function () {
-    $(".mobile-menu-opened").removeClass("open"); // Убираем класс 'open'
+    $(".mobile-menu-opened").removeClass("open");
   });
 
   $(document).click(function (event) {
@@ -198,27 +173,60 @@ $(document).ready(function () {
         ".mobile-menu-opened, .menu-btn, .menu-close-btn"
       ).length
     ) {
-      $(".mobile-menu-opened").removeClass("open"); // Скрываем меню
+      $(".mobile-menu-opened").removeClass("open");
     }
   });
 });
 $(document).ready(function () {
-  // Скрываем все блоки, кроме deposite-block
-  $(".withdraw-block").hide(); // Скрываем блок вывода
+  $(".withdraw-block").hide();
+  $(".wallet-history-wrapper").hide();
 
-  // Обработчик клика для кнопки "Пополнение"
   $(".deposite-btn").click(function () {
-    $(".withdraw-block").hide(); // Скрываем блок вывода
-    $(".deposite-block").fadeIn(); // Показываем блок пополнения
-    $(".deposite-btn").addClass("active"); // Добавляем активный класс к кнопке пополнения
-    $(".withdraw-btn").removeClass("active"); // Убираем активный класс от кнопки вывода
+    if ($(this).hasClass("active")) {
+      return;
+    }
+
+    $(".withdraw-block").hide();
+    $(".wallet-history-wrapper").hide();
+    $(".deposite-block").fadeIn();
+    $(".deposite-btn").addClass("active");
+    $(".withdraw-btn").removeClass("active");
+    $(".wallet-history-btn").removeClass("active");
+    $(".wallet-modal").removeClass("history");
   });
 
-  // Обработчик клика для кнопки "Вывод"
   $(".withdraw-btn").click(function () {
-    $(".deposite-block").hide(); // Скрываем блок пополнения
-    $(".withdraw-block").fadeIn(); // Показываем блок вывода
-    $(".withdraw-btn").addClass("active"); // Добавляем активный класс к кнопке вывода
-    $(".deposite-btn").removeClass("active"); // Убираем активный класс от кнопки пополнения
+    if ($(this).hasClass("active")) {
+      return;
+    }
+
+    $(".deposite-block").hide();
+    $(".wallet-history-wrapper").hide();
+    $(".withdraw-block").fadeIn();
+    $(".withdraw-btn").addClass("active");
+    $(".deposite-btn").removeClass("active");
+    $(".wallet-history-btn").removeClass("active");
+    $(".wallet-modal").removeClass("history");
   });
+
+  $(".wallet-history-btn").click(function () {
+    if ($(this).hasClass("active")) {
+      return;
+    }
+
+    $(".deposite-block").hide();
+    $(".withdraw-block").hide();
+    $(".wallet-history-wrapper").fadeIn();
+    $(".wallet-history-btn").addClass("active");
+    $(".deposite-btn").removeClass("active");
+    $(".withdraw-btn").removeClass("active");
+    $(".wallet-modal").addClass("history");
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const loader = document.getElementById("loader");
+
+  setTimeout(function () {
+    loader.style.display = "none";
+  }, 2000);
 });
